@@ -56,14 +56,16 @@ export function AvatarCadastro() {
             <form onSubmit={salvar}>
                 <div>
                     <label>Nome</label>
-                    <input type="text" name="nome" value={avatar.nome} onChange={valueChange} />
+                    <input className="input1" type="text" name="nome" value={avatar.nome} onChange={valueChange} />
                 </div>
                 <div>
                     <label>Avatar (imagem)</label>
-                    <input type="text" name="imagem" value={avatar.imagem} onChange={valueChange} />
+                    <input className="input2" type="text" name="imagem" value={avatar.imagem} onChange={valueChange} />
                 </div>
 
                 <button>Salvar</button>
+                <button>Editar</button>
+                <button>Excluir</button>
             </form>
         </>
     );
