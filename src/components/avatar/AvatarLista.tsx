@@ -10,6 +10,14 @@ export function AvatarLista() {
         setAvatarList(AvatarService.list);
     }, []);
 
+    function excluir(id: string | undefined) {
+        console.log('id ', id)
+        if (id) {
+            AvatarService.excluir(id);
+            setAvatarList(AvatarService.list);
+        }        
+    }
+
     return (
         <>
             <Link to={'/avatar/cadastro'}>Cadastrar Avatar</Link>
@@ -20,7 +28,8 @@ export function AvatarLista() {
                     <li key={avatar.id}>
                         {avatar.nome}
 
-                        <Link to={'/avatar/cadastro/' + avatar.id}> editar </Link>
+                        <Link to={'/avatar/cadastro/' + avatar.id}> editar </Link> <br />
+                        <button onClick={() => excluir(avatar.id)}> excluir</button>
                     </li>
                 ))}
             </ul>

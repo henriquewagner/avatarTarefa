@@ -6,6 +6,12 @@ export interface Avatar {
 }
 
 export class AvatarService {
+    static excluir(id: string) {
+        let index = AvatarService.list.findIndex(a => a.id === id);
+        AvatarService.list.splice(index, 1);   
+        
+        AvatarService.list = [...AvatarService.list]
+    }
 
     static list: Avatar[] = [];
 
